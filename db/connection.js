@@ -2,7 +2,7 @@ require("dotenv").config()
 
 const { MONGODBURI } = process.env
 const mongoose = require("mongoose")
-const config = { useUnifiedTopology: true, useNewUrlParser: true }
+const config = { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
 const DB = mongoose.connection
 
 mongoose.connect(MONGODBURI, config)
