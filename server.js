@@ -10,6 +10,8 @@ const express = require("express")
 const app = express()
 
 const morgan = require("morgan")
+const personRouter = require("./controllers/personRoutes")
+const signRouter = require("./controllers/signRoutes")
 
 //middleware
 NODE_ENV === "production" ? app.use(cors(corsOptions)) : app.use(cors());
@@ -21,6 +23,9 @@ app.get("/", (req, res) => {
     res.json({ hello: "Hello World!" });
   });
 
+//Routes to router
+app.use("/name", personRouter)
+app.use("/sign", signRouter)
 
 
 app.listen(PORT, () => {
