@@ -8,8 +8,8 @@ router.get("/", async (req, res) => {
 })
 
 //create route - to add signs
-router.post("/", async (req, res) => {
-    res.json(await Sign.create(req.body))
-})
+// router.post("/", async (req, res) => {
+//     res.json(await Sign.create(req.body))
+// })
 
 module.exports = router
