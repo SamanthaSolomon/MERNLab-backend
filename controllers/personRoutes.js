@@ -13,13 +13,13 @@ router.post("/", async (req, res) => {
 })
 
 //update
-router.put("/:id", async (req, res) => {
-    res.json(await Person.findByIdAndUpdate(req.params.id, req.body, { new: true }))
+router.put("/:name", async (req, res) => {
+    res.json(await Person.findByIdAndUpdate(req.params.name, req.body, { new: true }))
 })
 
 //delete
-router.delete("/:id", async (req, res) => {
-    res.json(await Person.findByIdAndRemove(req.params.id))
+router.delete("/:name", async (req, res) => {
+    res.json(await Person.findByIdAndRemove(req.params.name))
 })
 
 module.exports = router
